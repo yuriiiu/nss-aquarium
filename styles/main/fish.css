@@ -1,0 +1,16 @@
+.fishList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-basis: 75%;
+}
+
+.fish {
+    flex-basis: 25%;
+    margin: 1em 0;
+}
+
+.fish__image {
+    width: 10em;
+    height: 10em;
+}
