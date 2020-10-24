@@ -40,3 +40,8 @@ const fishCollection = [
         food: ["algae", "coral"]
     }
 ]
+
+
+export const useFish = () => {
+    return fishCollection.slice()
+}
