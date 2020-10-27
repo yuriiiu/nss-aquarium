@@ -1,22 +1,27 @@
 /**
- *   LocationListComponent which renders many location components
+ *  LocationList which renders individual location objects as HTML
  */
-import { useLocations } from "./LocationDataProvider.js"
-import LocationComponent from "./Location.js"
 
-const contentElement = document.querySelector(".content")
+// TODO: Import `useLocation` from the data provider module
+import {useLocation} from "./LocationDataProvider.js"
+import {Location} from "./Location.js"
 
-const LocationListComponent = () => {
-    const locations = useLocations()
+export const LocationList = () => {
 
-    contentElement.innerHTML = `
-        <section class="locations">
-            <h1 class="locations__header">Martin's Travels</h1>
-            <div class="locations__list">
-                ${locations.map(loc => LocationComponent(loc)).join("")}
-            </div>
-        </section>
+    // Get a reference to the `<article class="content">` element
+    const contentElement = document.querySelector(".content")
+    const locations = useLocation()
+
+    // Add to the existing HTML in the content element
+    let locHTMLRep = ""
+    for (const place of locations) {
+        locHTMLRep += Location(place)
+    }
+
+    contentElement.innerHTML += `
+        <article class="locationList">
+            ${locHTMLRep}
+        </arcticle>
     `
+    return contentElement
 }
-
-export default LocationListComponent
