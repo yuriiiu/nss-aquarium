@@ -1,22 +1,17 @@
 /**
- *  LocationComponent which renders individual location objects as HTML
+ *  Location which renders individual location objects as HTML
  */
-const LocationComponent = (location) => {
-
+export const Location = (place) => {
+    /*
     return `
-        <div class="location">
-            <header class="location__header">
-                <img class="location__image" src="${location.image}" />
-                <h2>${location.name}</h2>
-                <h4>${location.country}</h4>
-            </header>
-            ${
-                location.tips.map(tip => {
-                    return `<div class="location__tip">${tip}</div><hr/>`
-                }).join("")
-            }
-        </div>
+        <section class="fish card">
+            <div><img  class="fish__image image--card" src="${fish.image}" /></div>
+            <div class="fish__name">${fish.name}</div>
+            <div class="fish__species">${fish.species}</div>
+            <div class="fish__length">${fish.length}</div>
+            <div class="fish__location">${fish.location}</div>
+            <div class="fish__diet">${fish.food}</div>
+        </section>
     `
+    */
 }
-
-export default LocationComponent

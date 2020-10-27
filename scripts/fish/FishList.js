@@ -1,24 +1,32 @@
 /**
- *   FishListComponent which renders individual fish objects as HTML
+ *  FishList which renders individual fish objects as HTML
  */
-import { useFish } from "./FishDataProvider.js"
-import FishComponent from "./Fish.js"
 
-const contentElement = document.querySelector(".content")
+// TODO: Import `useFish` from the data provider module
+import {useFish} from "./FishDataProvider.js"
+import {Fish} from "./Fish.js"
 
-const FishListComponent = () => {
+export const FishList = () => {
+
+    // Get a reference to the `<article class="content">` element
+    const contentElement = document.querySelector(".content")
     const fishes = useFish()
 
-    contentElement.innerHTML += `
-        <section class="fishList">
-            ${
-                fishes.map(fish => {
-                    const fishHTML = FishComponent(fish)
-                    return fishHTML
-                }).join("")
-            }
-        </section>
-    `
-}
+    // Add to the existing HTML in the content element
+    let fishHTMLRep = ""
+    for (const fish of fishes) {
+        fishHTMLRep += Fish(fish)
+    }
+    /*
+    fishes.forEach (fish => {
+        contentElement.innerHTML += Fish(fish)
+    });
+    */
 
-export default FishListComponent
+    contentElement.innerHTML += `
+        <article class="fishList">
+            ${fishHTMLRep}
+        </arcticle>
+    `
+    return contentElement
+}
