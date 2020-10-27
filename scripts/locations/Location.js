@@ -1,17 +1,15 @@
 /**
  *  Location which renders individual location objects as HTML
  */
-export const Location = (place) => {
-    /*
+export const Location = (loc) => {
+    
     return `
-        <section class="fish card">
-            <div><img  class="fish__image image--card" src="${fish.image}" /></div>
-            <div class="fish__name">${fish.name}</div>
-            <div class="fish__species">${fish.species}</div>
-            <div class="fish__length">${fish.length}</div>
-            <div class="fish__location">${fish.location}</div>
-            <div class="fish__diet">${fish.food}</div>
+        <section class="location card">
+            <div><img  class="loc__image image--card" src="${loc.image}" /></div>
+            <div class="loc__name">${loc.name}</div>
+            <div class="loc__country">${loc.country}</div>
+            <div class="loc__tips">${loc.tips}</div>
         </section>
     `
-    */
+    
 }

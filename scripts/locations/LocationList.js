@@ -14,8 +14,8 @@ export const LocationList = () => {
 
     // Add to the existing HTML in the content element
     let locHTMLRep = ""
-    for (const place of locations) {
-        locHTMLRep += Location(place)
+    for (const loc of locations) {
+        locHTMLRep += Location(loc)
     }
 
     contentElement.innerHTML += `
