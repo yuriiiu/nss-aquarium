@@ -45,3 +45,40 @@ const fishCollection = [
 export const useFish = () => {
     return fishCollection.slice()
 }
+
+export const mostHolyFish = () => {
+    const holyFish = []
+
+    for (const fish of fishCollection) {
+        if (fish.size % 3 === 0) {
+            holyFish.push(fish)
+        }
+    }
+    
+    return holyFish
+}
+
+export const soldierFish = () => {
+    const soldiers =[]
+
+    for (const fish of fishCollection) {
+        if (fish.size % 5 === 0) {
+            soldiers.push(fish)
+        }
+    }
+    
+    return soldiers
+}
+
+
+export const nonHolyFish = () => {
+    const nonHoly = []
+
+    for (const fish of fishCollection) {
+        if ((fish.size % 5 != 0) && (fish.size % 3 != 0)) {
+            nonHoly.push(fish)
+        }
+    }
+
+    return nonHoly
+}
